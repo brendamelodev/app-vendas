@@ -1,5 +1,32 @@
-h1 {
-  color: #FAFAFA;
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: #FAFAFA;
+    padding-left: 10px;
+  }
+  img {
+    width: auto;
+    height: 45px;
+  }
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cadastro {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: auto;
+    height: 30px;
+    padding-right: 5px;
+  }
 }
 
 .selectors, .time {

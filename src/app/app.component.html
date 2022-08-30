@@ -1,20 +1,26 @@
 <p>
   <mat-toolbar color="primary">
+    <img src="\assets\churros.png" alt="logo">
     <h1>Onde posso encontrar Churros?</h1>
   </mat-toolbar>
 </p>
 
 <div class="container">
-  <h2>Pontos de venda cadastrados</h2>
-  <p>Listagem dos pontos:</p>
-  <ul>
-    <li *ngFor="let fomulario of formularios">{{ fomulario.nome }} |
-      {{ fomulario.endereco }}, {{ fomulario.municipio }} - {{ fomulario.estado }} |
-      Horário: {{ fomulario.horaInicio }} - {{ fomulario.horaFinal }}
-    </li>
-  </ul>
+  <div class="title">
+    <h2>Pontos de venda cadastrados</h2>
+    <ul>
+      <li *ngFor="let fomulario of formularios">{{ fomulario.nome }} |
+        {{ fomulario.endereco }}, {{ fomulario.municipio }} - {{ fomulario.estado }} |
+        Horário: {{ fomulario.horaInicio }} - {{ fomulario.horaFinal }}
+      </li>
+    </ul>
+  </div>
 
-  <h2>Cadastre um novo ponto de venda</h2>
+  <div class="cadastro">
+    <img src="\assets\churros2.png" alt="icon">
+    <h2>Cadastre um novo ponto de venda</h2>
+  </div>
+
   <form [formGroup]="formGroup" (ngSubmit)="create()">
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Nome Fantasia</mat-label>
