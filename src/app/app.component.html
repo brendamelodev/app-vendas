@@ -5,14 +5,17 @@
 </p>
 
 <div class="container">
-  <h2>Pontos de venda cadastrado</h2>
-  <p>cadastros</p>
+  <h2>Pontos de venda cadastrados</h2>
+  <p>Listagem dos pontos:</p>
   <ul>
-    <li *ngFor="let form of forms">{{ form.nome }}</li>
+    <li *ngFor="let fomulario of formularios">{{ fomulario.nome }} |
+      {{ fomulario.endereco }}, {{ fomulario.municipio }} - {{ fomulario.estado }} |
+      Horário: {{ fomulario.horaInicio }} - {{ fomulario.horaFinal }}
+    </li>
   </ul>
 
   <h2>Cadastre um novo ponto de venda</h2>
-  <form [formGroup]="form" (ngSubmit)="create()">
+  <form [formGroup]="formGroup" (click)="create()">
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Nome Fantasia</mat-label>
       <input type="text" matInput formControlName="nome">
@@ -31,7 +34,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Cidade</mat-label>
         <mat-select formControlName="municipio">
-          <mat-option *ngFor="let municipio of municipios" [value]="municipio.id">
+          <mat-option *ngFor="let municipio of municipios" [value]="municipio.nome">
             {{ municipio.nome }}
           </mat-option>
         </mat-select>
